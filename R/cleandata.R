@@ -12,7 +12,6 @@
 #' @examples
 #' read_data("read_data_helper.csv", c("w","x"))
 
-library(tidyverse)
 library(here)
 
 clean_data <- function(input_path, output_path = NULL, cols = NULL) {
