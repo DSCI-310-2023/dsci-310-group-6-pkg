@@ -2,7 +2,7 @@
 % Please edit documentation in R/getmed.R
 \name{get_med}
 \alias{get_med}
-\title{Generates the minimum value from a column in a dataset}
+\title{Generates the median value from a column in a dataset}
 \usage{
 get_med(data, column_name)
 }
@@ -12,8 +12,8 @@ get_med(data, column_name)
 \item{column_name}{A string representing the column we want to explore}
 }
 \value{
-The min value
+The median value
 }
 \description{
-Generates the minimum value from a column in a dataset
+Generates the median value from a column in a dataset
 }

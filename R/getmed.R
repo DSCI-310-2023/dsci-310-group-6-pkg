@@ -4,7 +4,7 @@
 #' @param column_name A string representing the column we want to explore
 #'
 #' @return The median value
-#'
+#' @importFrom stats median
 #' @export
 
 get_med <- function(data, column_name) {

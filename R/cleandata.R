@@ -7,7 +7,7 @@
 #' @param cols A list of quoted column name that we want to unselect
 #'
 #' @return A data frame excluding the specified columns
-#'
+#' @importFrom utils read.csv write.csv
 #' @export
 
 
