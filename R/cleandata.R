@@ -9,8 +9,7 @@
 #' @return A data frame excluding the specified columns
 #'
 #' @export
-#'
-#' @examples
+
 
 clean_data <- function(input_path, output_path = NULL, cols = NULL) {
   if(!is.character(input_path)) {
