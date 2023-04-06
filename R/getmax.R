@@ -27,23 +27,6 @@ get_max <- function(data, column_name) {
 }
 
 
-get_min <- function(data, column_name) {
-  # Check that column_name is a character string
-  if (!is.character(column_name)) {
-    stop("Column name must be a character string.")
-  }
-
-  # Check that data is a data frame
-  if (!is.data.frame(data)) {
-    stop("`data` should be a data frame")
-  }
-
-  min_value <- min(data[[column_name]])
-
-  return(min_value)
-}
-
-
 get_med <- function(data, column_name) {
   # Check that column_name is a character string
   if (!is.character(column_name)) {
