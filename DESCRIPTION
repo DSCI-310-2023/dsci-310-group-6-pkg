@@ -1,12 +1,11 @@
 Package: datatheexplorer
-Title: What the Package Does (One Line, Title Case)
+Title: Helps with Processing and Exploring Data
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
+    person("Davis", "Li", , "davisli1@student.ubc.ca", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+Description: This package helps with the preliminary parts of an data analysis project. Specifically, the package helps with reading + cleaning data, exploring the data, and splitting the data.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
-Imports: 
