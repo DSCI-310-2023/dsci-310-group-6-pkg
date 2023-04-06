@@ -13,11 +13,15 @@ split_data(
 )
 }
 \arguments{
+\item{input_path}{A input path}
+
 \item{prop}{The proportion of data to be split into training set (<1)}
 
 \item{train_test}{A string indicating which set to return}
 
-\item{data}{A input dataframe}
+\item{output_train_path}{A output train path}
+
+\item{output_test_path}{A output test path}
 }
 \value{
 A data frame of training or testing set based on the third input

@@ -1,9 +1,9 @@
-#' Generates the minimum value from a column in a dataset
+#' Generates the median value from a column in a dataset
 #'
 #' @param data A dataframe we are going to use
 #' @param column_name A string representing the column we want to explore
 #'
-#' @return The min value
+#' @return The median value
 #'
 #' @export
 

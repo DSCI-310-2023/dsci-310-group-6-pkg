@@ -5,7 +5,9 @@
 #' When the third input is "test":
 #'  return the testing set, which has ((1-prop)*total_number_of_rows_in_data) rows
 #'
-#' @param data A input dataframe
+#' @param input_path A input path
+#' @param output_train_path A output train path
+#' @param output_test_path A output test path
 #' @param prop The proportion of data to be split into training set (<1)
 #' @param train_test A string indicating which set to return
 #'
