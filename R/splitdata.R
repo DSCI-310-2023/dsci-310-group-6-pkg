@@ -13,8 +13,6 @@
 #'
 #' @export
 
-library(here)
-
 split_data <- function(input_path,prop,train_test, output_train_path = NULL, output_test_path = NULL) {
   data <- read.csv(input_path)
   if (!is.data.frame(data)) {
