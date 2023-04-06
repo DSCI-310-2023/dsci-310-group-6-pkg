@@ -2,8 +2,7 @@
 % Please edit documentation in R/getmax.R
 \name{get_max}
 \alias{get_max}
-\title{Generates a pairplot plotting a scatter chart
-and showing correlation between attributes. Also allows a title to be placed}
+\title{Generates the maximum value from a column in a dataset}
 \usage{
 get_max(data, column_name)
 }
@@ -13,8 +12,8 @@ get_max(data, column_name)
 \item{column_name}{A string representing the column we want to explore}
 }
 \value{
-The max, min and median value
+The max value
 }
 \description{
-Save the pairplot in the results folder
+Generates the maximum value from a column in a dataset
 }

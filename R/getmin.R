@@ -1,12 +1,9 @@
-#' Generates a pairplot plotting a scatter chart
-#' and showing correlation between attributes. Also allows a title to be placed
-#'
-#' Save the pairplot in the results folder
+#' Generates the median value from a column in a dataset
 #'
 #' @param data A dataframe we are going to use
 #' @param column_name A string representing the column we want to explore
 #'
-#' @return The max, min and median value
+#' @return The median value
 #'
 #' @export
 

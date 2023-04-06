@@ -2,3 +2,5 @@
 
 export(clean_data)
 export(get_max)
+export(get_med)
+export(get_min)
