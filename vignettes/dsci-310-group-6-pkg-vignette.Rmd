@@ -22,8 +22,8 @@ When working with data to find the patterns or make predictions, we usually need
 
 This document introduces you to dsci-310-group-6-pkg’s basic set of tools, and shows you how to apply them to data frames.
 
-### Data: sample_data & mydata
-To explore the basic data manipulation verbs of dsci-310-group-6-pkg, we’ll use the dataset sample_data. This data frame has three columns and three rows.
+### Data: sample_data & my_data
+To explore the basic data manipulation verbs of dsci-310-group-6-pkg, we’ll use two datasets: sample_data & my_data. sample_data sample has three columns and three rows; my_data has three columns and five rows.
 
 ```{r}
 dim(sample_data)
@@ -31,6 +31,8 @@ sample_data
 my_data <- data.frame(x = c(1, 2, 3, 4, 5),
                       y = c(10, 20, 30, 40, 50),
                       z = c(100, 200, 300, 400, 500))
+dim(my_data)
+my_data
 ```
 ### Read&Clean&Export data with `cleandata()`
 cleandata() allows you to read the data from the given path, discard the given columns and export the data into the given destination path. Both the first two arguments are quoted paths, which are of string type. The last argument is a list containing the quoted column names.
@@ -44,7 +46,31 @@ clean_data(input_path = input_path, NULL, "x")
 ### Find the maximum value of a column in the data with `getmax()`
 getmax() allows you to find the maximum value of a column in a given dataset. The first argument is a data frame. The second argument is a quoted column name which you want to find the maximum value for.
 
-For example, we find the 
+For example, we find the maximum value of column "y" in my_data, which equals to 50.
 ```{r}
+get_max(my_data, "y")
+```
 
+### Find the median of a column in the data with `getmed()`
+getmed() allows you to find the median of a column in a given dataset. The first argument is a data frame. The second argument is a quoted column name which you want to find the median for.
+
+For example, we find the median of column "x" in my_data, which equals to 3.
+```{r}
+get_med(my_data, "x")
+```
+
+### Find the minimum value of a column in the data with `getmin()`
+getmin() allows you to find the minimum value of a column in a given dataset. The first argument is a data frame. The second argument is a quoted column name which you want to find the minimum value for.
+
+For example, we find the minimum value of column "z" in my_data, which equals to 100.
+```{r}
+get_min(my_data, "z")
+```
+
+### Split data into training and testing sets with `splitdata()`
+splitdata() allows you to split the data into training and testing set by the given proportion. You can also choose to export both the training and testing set, and return either training set or testing set. The first three arguments are all quoted paths, which are of string type (first one is input data path, second one is training set output path, third one is testing set output path). The fourth argument is a float smaller than 1, which represents the proportion of training set we want. The last argument is a string(either "train" or "test") to indicate which set to return.
+
+For example, we can split the sample_data with 67% of training set. We choose not to export any of training or testing set. And we return the testing set with 1 row.
+```{r}
+splitdata(input_path, NULL, NULL, 0.67, "test")
 ```
