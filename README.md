@@ -1,38 +1,71 @@
-# DSCI-310-Group-6
+# DSCI-310-group-6-pkg
 
-# Predict Bike Sharing Demand
+## DSCI310 - Package for Predict Bike Sharing Demand
 Authors: Linda Huang, Davis Li, Jialu Jin
 
 
 ## About
-The data we are using to compile this report and build our model is a "Bike Sharing Data set" from UCI Machine Learning Repository. The original data were pulled from http://capitalbikeshare.com/system-data.
+The package is used for generating the Bike Sharing Demand Report for dsci_310_group_6. The functions in this package includes cleaning data, spliting data and finding the mean/median/max of a given column.
 
-In this Data Analysis Report, we attempt to build a regression model using KNN algorithm. We will use windspeed (Wind Speed), atemp (Temperature), season (Season) attributes from the data set to predict the demand of bike during different hours, days of the week, and months. The resulting model will be able to help bike sharing business to better understand the demand of bike. Our current model has a prediction error, as measured by root mean squared error (RMSE), of about 1483. While we can improve the model given that the count of total rental bikes in our data set range from 22 to 8714, and the median count of total rental bikes is 4548, the model is still useful.
+The usage of this package include improving efficiency in analyzing data and simplify the process of predictive model building by integragting repetitive steps in the functions.
 
-## Report
 
-The analysis report can be found [here](analysis.ipynb).
-
-## Usage - How to interactively run and explore the project in Jupyter Lab
+## Installation
 
 First, clone this GitHub repository and open the terminal. In the terminal, navigate to the root folder of this project. 
 
   ```
-  git clone https://github.com/JialuJin/dsci-310-group-6
+  git clone https://github.com/DSCI-310/dsci-310-group-6-pkg
 
   ```
 
 We use a Docker container image to make the computational environment for this project reproducible.
 
-To interactively run R Studio inside the `jialujin/dsci-310-group-6` Docker container, type the following in terminal, after navigating to the root of this project repository:
+Navigate to the cloned folder in local terminal (example steps shown below):
 
+1. Show the list of all folders in the current repository:
   ```
-  docker run -it --rm -p 8787:8787 -e PASSWORD=asdf -v "/$(pwd)":/home/rstudio/ jialujin/dsci-310-group-6
+  ls 
+  ```
+  
+2. Navigate to the cloned folder:
+  ```
+  cd dsci-310-group-6-pkg 
+  ```
+3. Run pip to install the package locally:
+  ```
+  pip install .
+  ```
 
+Now the package should be installed and you will be able to import the package into the R Markdown file for generating the analysis report.
+
+
+## Usage
+
+This package include functions that can be used throughout data wraggling and predictive model building process. The first function is to read data into the notebook and unselect specificed columns.
   ```
-- Once the container has launched, users need to copy the URL to a web browser on your computer and type: `http://localhost:8787` into their web browser to access R Studio. A login panel will appear on the webpage and you can enter username as "rstudio", with password "asdf"
-- Next, in R Studio, navigate to, and open `bike_share_analysis.RMD`in the doc folder. Click **Knit** to run the entire analysis.
-- when done working, type `docker rm ` to remove the dangling container.
+  from dsci_310_group_6_pkg.cleandata import clean_data
+  clean_data(file_path, output_path = NULL, c("x", "y"))
+  clean_data(file_path, output_path = NULL, cols = NULL)
+  ```
+ 
+Another usage for this package is to get some summary information (Min, Max, or Median) of a column:
+  ```
+  from dsci_310_group_6_pkg.getmax import get_max
+  from dsci_310_group_6_pkg.getmed import get_med
+  from dsci_310_group_6_pkg.getmin import get_min
+  get_max(my_data, "col_y")
+  get_min(my_data, "col_x")
+  get_med(my_data, "col_y")
+  ```
+  
+Before trainning the predictive models, we often need to split data in train and test sets. The function in the package shown below can be used to perform this task (note that the fourth argument represent the proportion for split):
+  ```
+  from dsci_310_group_6_pkg.splitdata import splitdata
+  splitdata(input_path, NULL, NULL, 0.67, "test")
+  splitdata(input_path, NULL, NULL, 0.34, "train")
+  ```
+
 
 ## Dependencies:
 
@@ -51,5 +84,9 @@ R version 4.1.1 with R packages:
 The project is made available under the [Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/). The software provided in this project is offered under the [MIT open source license](https://opensource.org/license/mit/). 
 
 See [the license file](LICENSE.md) for more information.
+
+## License Information
+
+
 
 
