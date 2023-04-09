@@ -15,7 +15,7 @@
 #' @importFrom dplyr sample_n anti_join
 #' @export
 
-split_data <- function(input_path,prop,train_test, output_train_path = NULL, output_test_path = NULL) {
+splitdata <- function(input_path, output_train_path = NULL, output_test_path = NULL,prop,train_test) {
   data <- read.csv(input_path)
   if (!is.data.frame(data)) {
     stop("`input_path` should be a data frame")
