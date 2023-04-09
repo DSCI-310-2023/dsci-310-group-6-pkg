@@ -1,4 +1,4 @@
-file_path <- here::here('dsci-310-group-6-pkg/data/sample_data.csv')
+file_path <- here::here('data/sample_data.csv')
 
 # Test that the function returns a data frame
 test_that("`clean_data` should return a data frame", {

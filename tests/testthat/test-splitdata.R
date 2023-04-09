@@ -1,4 +1,4 @@
-input_path <- here::here('dsci-310-group-6-pkg/data/sample_data.csv')
+input_path <- here::here('data/sample_data.csv')
 
 # Test that the function returns the correct training set with 1 row
 test_that("`splitdata` should return a training set with 1 row", {
