@@ -12,29 +12,10 @@ The usage of this package include improving efficiency in analyzing data and sim
 
 ## Installation
 
-First, clone this GitHub repository and open the terminal. In the terminal, navigate to the root folder of this project. 
-
+Install the development version of datatheexplorer from GitHub with:
   ```
-  git clone https://github.com/DSCI-310/dsci-310-group-6-pkg
-
-  ```
-
-We use a Docker container image to make the computational environment for this project reproducible.
-
-Navigate to the cloned folder in local terminal (example steps shown below):
-
-1. Show the list of all folders in the current repository:
-  ```
-  ls 
-  ```
-  
-2. Navigate to the cloned folder:
-  ```
-  cd dsci-310-group-6-pkg 
-  ```
-3. Run pip to install the package locally:
-  ```
-  pip install .
+  # install.packages("devtools")
+  devtools::install_github("DSCI-310/dsci-310-group-6-pkg")
   ```
 
 Now the package should be installed and you will be able to import the package into the R Markdown file for generating the analysis report.
@@ -67,17 +48,9 @@ Before trainning the predictive models, we often need to split data in train and
   ```
 
 
-## Dependencies:
+## Contributing:
 
-R version 4.1.1 with R packages:
-    r-GGally=2.1.2 \
-    r-tidyverse=1.3.1 \
-    r-tidymodels=0.2.0 \
-    r-testthat=3.1.6 \
-    r-repr=1.1.4 \
-    r-readxl=1.4.0 \
-    r-digest=0.6.29 \
-    r-kknn=1.3.1 
+We appreciate any contributions to the package and please refer to the [Conrtibuting] (CONTRIBUTING.md) and [Code of Conduct] (CODE_OF_CONDUCT.md) document for more information. 
 
 ## License Information
 
@@ -85,7 +58,7 @@ The project is made available under the [Attribution 4.0 International (CC BY 4.
 
 See [the license file](LICENSE.md) for more information.
 
-## License Information
+
 
 
 
