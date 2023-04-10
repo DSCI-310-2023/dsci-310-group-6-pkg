@@ -3,6 +3,9 @@
 ## DSCI310 - Package for Predict Bike Sharing Demand
 Authors: Linda Huang, Davis Li, Jialu Jin
 
+<!-- badges: start -->
+[![R-CMD-check](https://github.com/DSCI-310/dsci-310-group-6-pkg/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/DSCI-310/dsci-310-group-6-pkg/actions/workflows/R-CMD-check.yaml)
+<!-- badges: end -->
 
 ## About
 The package is used for generating the Bike Sharing Demand Report for dsci_310_group_6. The functions in this package includes cleaning data, spliting data and finding the mean/median/max of a given column.
