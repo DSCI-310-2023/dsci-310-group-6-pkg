@@ -84,23 +84,7 @@
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>First, clone this GitHub repository and open the terminal. In the terminal, navigate to the root folder of this project.</p>
-<pre><code>git clone https://github.com/DSCI-310/dsci-310-group-6-pkg
-</code></pre>
-<p>We use a Docker container image to make the computational environment for this project reproducible.</p>
-<p>Navigate to the cloned folder in local terminal (example steps shown below):</p>
-<ol style="list-style-type: decimal">
-<li>Show the list of all folders in the current repository:</li>
-</ol>
-<pre><code><span><span class="va">ls</span> </span></code></pre>
-<ol start="2" style="list-style-type: decimal">
-<li>Navigate to the cloned folder:</li>
-</ol>
-<pre><code>cd dsci-310-group-6-pkg </code></pre>
-<ol start="3" style="list-style-type: decimal">
-<li>Run pip to install the package locally:</li>
-</ol>
-<pre><code>pip install .</code></pre>
+<p>Install the development version of datatheexplorer from GitHub with: <code># install.packages("devtools")   devtools::install_github("DSCI-310/dsci-310-group-6-pkg")</code></p>
 <p>Now the package should be installed and you will be able to import the package into the R Markdown file for generating the analysis report.</p>
 </div>
 <div class="section level2">
@@ -111,26 +95,15 @@
 <p>Before trainning the predictive models, we often need to split data in train and test sets. The function in the package shown below can be used to perform this task (note that the fourth argument represent the proportion for split): <code>from dsci_310_group_6_pkg.splitdata import splitdata   splitdata(input_path, NULL, NULL, 0.67, "test")   splitdata(input_path, NULL, NULL, 0.34, "train")</code></p>
 </div>
 <div class="section level2">
-<h2 id="dependencies">Dependencies:<a class="anchor" aria-label="anchor" href="#dependencies"></a>
+<h2 id="contributing">Contributing:<a class="anchor" aria-label="anchor" href="#contributing"></a>
 </h2>
-<p>R version 4.1.1 with R packages: r-GGally=2.1.2<br>
-r-tidyverse=1.3.1<br>
-r-tidymodels=0.2.0<br>
-r-testthat=3.1.6<br>
-r-repr=1.1.4<br>
-r-readxl=1.4.0<br>
-r-digest=0.6.29<br>
-r-kknn=1.3.1</p>
+<p>We appreciate any contributions to the package and please refer to the [Conrtibuting] (CONTRIBUTING.md) and [Code of Conduct] (CODE_OF_CONDUCT.md) document for more information.</p>
 </div>
 <div class="section level2">
 <h2 id="license-information">License Information<a class="anchor" aria-label="anchor" href="#license-information"></a>
 </h2>
 <p>The project is made available under the <a href="https://creativecommons.org/licenses/by/4.0/" class="external-link">Attribution 4.0 International (CC BY 4.0)</a>. The software provided in this project is offered under the <a href="https://opensource.org/license/mit/" class="external-link">MIT open source license</a>.</p>
 <p>See <a href="LICENSE.html">the license file</a> for more information.</p>
-</div>
-<div class="section level2">
-<h2 id="license-information-1">License Information<a class="anchor" aria-label="anchor" href="#license-information-1"></a>
-</h2>
 </div>
 </div>
   </div>
