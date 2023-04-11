@@ -16,9 +16,8 @@
 #' @export
 
 splitdata <- function(input_path, output_train_path = NULL, output_test_path = NULL,prop,train_test) {
-  data <- read.csv(input_path)
   if (!is.character(input_path)) {
-    stop("`clean_data` expects a quoted path of the data file as the first input")
+    stop("`split_data` expects a quoted path of the data file as the first input")
   }
   else if(!is.numeric(prop) | prop >= 1) {
     stop("`split_data` expects a number smaller than 1 as second input")
@@ -26,7 +25,7 @@ splitdata <- function(input_path, output_train_path = NULL, output_test_path = N
   else if(! train_test %in% c("train","test")) {
     stop("`split_data` expects either 'train' or 'test' as third input")
   }
-
+  data <- read.csv(input_path)
   training <- sample_n(data, nrow(data)*prop, replace = FALSE)
   testing <- anti_join(data, training)
   if (!is.null(output_train_path)) {
