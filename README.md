@@ -10,6 +10,7 @@ Authors: Linda Huang, Davis Li, Jialu Jin
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/DSCI-310/dsci-310-group-6-pkg/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/DSCI-310/dsci-310-group-6-pkg/actions/workflows/R-CMD-check.yaml)
+[![codecov](https://codecov.io/gh/DSCI-310/dsci-310-group-6-pkg/branch/main/graph/badge.svg?token=5xOKOnaBIl)](https://codecov.io/gh/DSCI-310/dsci-310-group-6-pkg)
 <!-- badges: end -->
 
 ## About
@@ -115,7 +116,7 @@ sample_data
 splitdata(input_path, NULL, NULL, 0.67, "test")
 #> Joining, by = c("x", "y", "z")
 #>   x y  z
-#> 1 1 5  9
+#> 1 2 6 10
 #> 2 3 7 11
 splitdata(input_path, NULL, NULL, 0.34, "train")
 #> Joining, by = c("x", "y", "z")
