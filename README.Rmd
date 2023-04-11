@@ -94,7 +94,7 @@ splitdata(input_path, NULL, NULL, 0.34, "train")
 
 ## Contributing:
 
-We appreciate any contributions to the package and please refer to the [Contributing] (CONTRIBUTING.md) and [Code of Conduct] (CODE_OF_CONDUCT.md) document for more information. 
+We appreciate any contributions to the package and please refer to the [Contributing](CONTRIBUTING.md) and [Code of Conduct](CODE_OF_CONDUCT.md) document for more information. 
 
 ## License Information
 

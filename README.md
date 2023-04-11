@@ -16,21 +16,25 @@ Authors: Linda Huang, Davis Li, Jialu Jin
 
 The package is used for generating the Bike Sharing Demand Report for
 dsci_310_group_6. The functions in this package includes cleaning data,
-spliting data and finding the mean/median/max of a given column. These functions 
-are built on other functions such as tidyverse, dplyr, stats, utils and have similar abilities. 
-However, our functions provide functions that are much more tailored to a specific type of workflow rather than
-the generic functions that pre-existing functions have. 
+spliting data and finding the mean/median/max of a given column. These
+functions are built on other functions such as tidyverse, dplyr, stats,
+utils and have similar abilities.
+
+However, our functions provide functions that are much more tailored to
+a specific type of workflow rather than the generic functions that
+pre-existing functions have.
 
 The usage of this package include improving efficiency in analyzing data
 and simplify the process of predictive model building by integragting
 repetitive steps in the functions.
 
 #### Functions included:
-* clean_data()
-* get_max()
-* get_min()
-* get_med()
-* splitdata()
+
+- clean_data()
+- get_max()
+- get_min()
+- get_med()
+- splitdata()
 
 ## Installation
 
@@ -108,18 +112,18 @@ sample_data
 splitdata(input_path, NULL, NULL, 0.67, "test")
 #> Joining, by = c("x", "y", "z")
 #>   x y  z
-#> 1 1 5  9
-#> 2 4 8 12
+#> 1 2 6 10
+#> 2 3 7 11
 splitdata(input_path, NULL, NULL, 0.34, "train")
 #> Joining, by = c("x", "y", "z")
-#>   x y  z
-#> 1 2 6 10
+#>   x y z
+#> 1 1 5 9
 ```
 
 ## Contributing:
 
 We appreciate any contributions to the package and please refer to the
-\[Conrtibuting\] (CONTRIBUTING.md) and \[Code of Conduct\]
+\[Contributing\] (CONTRIBUTING.md) and \[Code of Conduct\]
 (CODE_OF_CONDUCT.md) document for more information.
 
 ## License Information
