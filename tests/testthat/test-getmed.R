@@ -13,3 +13,14 @@ are passed to `data` and `column_name` arguments", {
   expect_error(getmed(hi, "y"))
   expect_error(getmed(my_data, hi))
 })
+
+# Data is not a data frame
+test_that("get_max throws an error when data is not a data frame", {
+  expect_error(get_med(list(x = 1:3, y = 4:6), "y"), "`data` should be a data frame")
+})
+
+# column_name is not a character string
+test_that("get_max throws an error when column_name is not a character string", {
+  expect_error(get_med(my_data, 123), "Column name must be a character string.")
+})
+
