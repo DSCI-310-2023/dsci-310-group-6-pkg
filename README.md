@@ -30,11 +30,11 @@ repetitive steps in the functions.
 
 #### Functions included:
 
-```- clean_data()```
-```- get_max()```
-```- get_min()```
-```- get_med()```
-```- splitdata()```
+- ```clean_data()```
+- ```get_max()```
+- ```get_min()```
+- ```get_med()```
+- ```splitdata()```
 
 ## Installation
 
