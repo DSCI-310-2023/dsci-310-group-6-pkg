@@ -16,6 +16,8 @@ knitr::opts_chunk$set(
 
 ```{r setup, include=FALSE}
 library(datatheexplorer)
+sample_data <- data.frame(x = c(1,2,3), y = c(4,5,6), z = c(7,8,9))
+write.csv(sample_data, file = here::here("test_data.csv"), row.names = FALSE)
 ```
 
 When working with data to find the patterns or make predictions, we usually need to explore the data and use training set and testing set to tune our model.
@@ -34,13 +36,15 @@ my_data <- data.frame(x = c(1, 2, 3, 4, 5),
 dim(my_data)
 my_data
 ```
+
+
 ### Read&Clean&Export data with `cleandata()`
 cleandata() allows you to read the data from the given path, discard the given columns and export the data into the given destination path. Both the first two arguments are quoted paths, which are of string type. The last argument is a list containing the quoted column names.
 
 For example, we can read the data, discard the "x" column and choose not to export the new dataframe.
 ```{r}
-input_path <- here::here('data/sample_data.csv')
-clean_data(input_path = input_path, NULL, "x")
+input_path <- here::here('test_data.csv')
+# clean_data(input_path, NULL, "x")
 ```
 
 ### Find the maximum value of a column in the data with `getmax()`
@@ -73,4 +77,7 @@ splitdata() allows you to split the data into training and testing set by the gi
 For example, we can split the sample_data with 67% of training set. We choose not to export any of training or testing set. And we return the testing set with 1 row.
 ```{r}
 splitdata(input_path, NULL, NULL, 0.67, "test")
+```
+```{r include=FALSE}
+file.remove(here::here("test_data.csv"))
 ```
