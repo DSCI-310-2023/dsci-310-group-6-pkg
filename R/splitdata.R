@@ -17,8 +17,8 @@
 
 splitdata <- function(input_path, output_train_path = NULL, output_test_path = NULL,prop,train_test) {
   data <- read.csv(input_path)
-  if (!is.data.frame(data)) {
-    stop("`input_path` should be a data frame")
+  if (!is.character(input_path)) {
+    stop("`clean_data` expects a quoted path of the data file as the first input")
   }
   else if(!is.numeric(prop) | prop >= 1) {
     stop("`split_data` expects a number smaller than 1 as second input")
