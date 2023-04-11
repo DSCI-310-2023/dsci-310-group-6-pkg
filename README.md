@@ -28,13 +28,16 @@ The usage of this package include improving efficiency in analyzing data
 and simplify the process of predictive model building by integragting
 repetitive steps in the functions.
 
+If you want to learn more about the package in depth, you can click
+[here](https://dsci-310.github.io/dsci-310-group-6-pkg/).
+
 #### Functions included:
 
-- ```clean_data()```
-- ```get_max()```
-- ```get_min()```
-- ```get_med()```
-- ```splitdata()```
+- `clean_data()`
+- `get_max()`
+- `get_min()`
+- `get_med()`
+- `splitdata()`
 
 ## Installation
 
@@ -112,19 +115,19 @@ sample_data
 splitdata(input_path, NULL, NULL, 0.67, "test")
 #> Joining, by = c("x", "y", "z")
 #>   x y  z
-#> 1 2 6 10
+#> 1 1 5  9
 #> 2 3 7 11
 splitdata(input_path, NULL, NULL, 0.34, "train")
 #> Joining, by = c("x", "y", "z")
-#>   x y z
-#> 1 1 5 9
+#>   x y  z
+#> 1 2 6 10
 ```
 
 ## Contributing:
 
 We appreciate any contributions to the package and please refer to the
-\[Contributing\] (CONTRIBUTING.md) and \[Code of Conduct\]
-(CODE_OF_CONDUCT.md) document for more information.
+[Contributing](CONTRIBUTING.md) and [Code of
+Conduct](CODE_OF_CONDUCT.md) document for more information.
 
 ## License Information
 
