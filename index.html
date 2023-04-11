@@ -86,15 +86,75 @@
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>Install the development version of datatheexplorer from GitHub with: <code># install.packages("devtools")   devtools::install_github("DSCI-310/dsci-310-group-6-pkg")</code></p>
+<p>Install the development version of datatheexplorer from GitHub with:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("devtools")</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"DSCI-310/dsci-310-group-6-pkg"</span>)</span></code></pre></div>
 <p>Now the package should be installed and you will be able to import the package into the R Markdown file for generating the analysis report.</p>
 </div>
 <div class="section level2">
 <h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
 </h2>
-<p>This package include functions that can be used throughout data wraggling and predictive model building process. The first function is to read data into the notebook and unselect specificed columns. <code>library(datatheexplorer)   clean_data(file_path, output_path = NULL, c("x", "y"))   clean_data(file_path, output_path = NULL, cols = NULL)</code></p>
-<p>Another usage for this package is to get some summary information (Min, Max, or Median) of a column: <code>library(datatheexplorer)   get_max(my_data, "col_y")   get_min(my_data, "col_x")   get_med(my_data, "col_y")</code></p>
-<p>Before trainning the predictive models, we often need to split data in train and test sets. The function in the package shown below can be used to perform this task (note that the fourth argument represent the proportion for split): <code>library(datatheexplorer)   splitdata(input_path, NULL, NULL, 0.67, "test")   splitdata(input_path, NULL, NULL, 0.34, "train")</code></p>
+<div class="section level4">
+<h4 id="clean_data">clean_data()<a class="anchor" aria-label="anchor" href="#clean_data"></a>
+</h4>
+<p>This package include functions that can be used throughout data wraggling and predictive model building process. The first function is to read data into the notebook and unselect specificed columns.</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">datatheexplorer</span><span class="op">)</span></span>
+<span><span class="va">sample_data</span></span>
+<span><span class="co">#&gt;   x y  z</span></span>
+<span><span class="co">#&gt; 1 1 5  9</span></span>
+<span><span class="co">#&gt; 2 2 6 10</span></span>
+<span><span class="co">#&gt; 3 3 7 11</span></span>
+<span><span class="co">#&gt; 4 4 8 12</span></span>
+<span><span class="co"># This function will remove columns X and Y from the final dataframe</span></span>
+<span><span class="co"># clean_data(input_path, output_path = NULL, c("x", "y"))</span></span>
+<span></span>
+<span><span class="co"># Specifying NULL in cols will keep all the columns from existing dataframe</span></span>
+<span><span class="co"># clean_data(input_path, output_path = NULL, cols = NULL)</span></span></code></pre></div>
+</div>
+<div class="section level4">
+<h4 id="get_max-get_med-get_min">get_max(), get_med(), get_min()<a class="anchor" aria-label="anchor" href="#get_max-get_med-get_min"></a>
+</h4>
+<p>Another usage for this package is to get some summary information (Min, Max, or Median) of a column:</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">datatheexplorer</span><span class="op">)</span></span>
+<span><span class="va">sample_data</span></span>
+<span><span class="co">#&gt;   x y  z</span></span>
+<span><span class="co">#&gt; 1 1 5  9</span></span>
+<span><span class="co">#&gt; 2 2 6 10</span></span>
+<span><span class="co">#&gt; 3 3 7 11</span></span>
+<span><span class="co">#&gt; 4 4 8 12</span></span>
+<span><span class="co"># this will obtain the max of the column</span></span>
+<span><span class="fu"><a href="reference/get_max.html">get_max</a></span><span class="op">(</span><span class="va">sample_data</span>, <span class="st">"y"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 8</span></span>
+<span></span>
+<span><span class="co"># this will obtain the min of the column</span></span>
+<span><span class="fu"><a href="reference/get_min.html">get_min</a></span><span class="op">(</span><span class="va">sample_data</span>, <span class="st">"x"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 1</span></span>
+<span></span>
+<span><span class="co"># this will obtain the median of the column</span></span>
+<span><span class="fu"><a href="reference/get_med.html">get_med</a></span><span class="op">(</span><span class="va">sample_data</span>, <span class="st">"y"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 6.5</span></span></code></pre></div>
+<p>Before trainning the predictive models, we often need to split data in train and test sets. The function in the package shown below can be used to perform this task (note that the fourth argument represent the proportion for split):</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">datatheexplorer</span><span class="op">)</span></span>
+<span><span class="va">sample_data</span></span>
+<span><span class="co">#&gt;   x y  z</span></span>
+<span><span class="co">#&gt; 1 1 5  9</span></span>
+<span><span class="co">#&gt; 2 2 6 10</span></span>
+<span><span class="co">#&gt; 3 3 7 11</span></span>
+<span><span class="co">#&gt; 4 4 8 12</span></span>
+<span><span class="co"># splits the data into test and train datasets</span></span>
+<span><span class="fu"><a href="reference/splitdata.html">splitdata</a></span><span class="op">(</span><span class="va">input_path</span>, <span class="cn">NULL</span>, <span class="cn">NULL</span>, <span class="fl">0.67</span>, <span class="st">"test"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Joining, by = c("x", "y", "z")</span></span>
+<span><span class="co">#&gt;   x y  z</span></span>
+<span><span class="co">#&gt; 1 1 5  9</span></span>
+<span><span class="co">#&gt; 2 4 8 12</span></span>
+<span><span class="fu"><a href="reference/splitdata.html">splitdata</a></span><span class="op">(</span><span class="va">input_path</span>, <span class="cn">NULL</span>, <span class="cn">NULL</span>, <span class="fl">0.34</span>, <span class="st">"train"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Joining, by = c("x", "y", "z")</span></span>
+<span><span class="co">#&gt;   x y  z</span></span>
+<span><span class="co">#&gt; 1 2 6 10</span></span></code></pre></div>
+</div>
 </div>
 <div class="section level2">
 <h2 id="contributing">Contributing:<a class="anchor" aria-label="anchor" href="#contributing"></a>
