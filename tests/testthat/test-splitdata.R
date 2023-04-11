@@ -16,7 +16,8 @@ test_that("`splitdata` should return a testing set with 1 row", {
 
 # Test if function throws an error when input_path is not a character
 test_that("splitdata throws an error when input_path is not a character", {
-  expect_error(splitdata(123, output_train_path, output_test_path, 0.8, "train"))
+  expect_error(splitdata(123, prop = 0.8, train_test = "train"),
+               "`split_data` expects a quoted path of the data file as the first input")
 })
 
 # Test if function throws an error when prop is not a number smaller than 1
