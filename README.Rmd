@@ -34,6 +34,8 @@ However, our functions provide functions that are much more tailored to a specif
 
 The usage of this package include improving efficiency in analyzing data and simplify the process of predictive model building by integragting repetitive steps in the functions.
 
+If you want to learn more about the package in depth, you can click [here](https://dsci-310.github.io/dsci-310-group-6-pkg/).
+
 #### Functions included:
 * ```clean_data()```
 * ```get_max()```
