@@ -12,10 +12,6 @@ Authors: Linda Huang, Davis Li, Jialu Jin
 [![R-CMD-check](https://github.com/DSCI-310/dsci-310-group-6-pkg/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/DSCI-310/dsci-310-group-6-pkg/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-``` r
-library(datatheexplorer)
-```
-
 ## About
 
 The package is used for generating the Bike Sharing Demand Report for
@@ -29,27 +25,86 @@ repetitive steps in the functions.
 ## Installation
 
 Install the development version of datatheexplorer from GitHub with:
-`# install.packages("devtools")   devtools::install_github("DSCI-310/dsci-310-group-6-pkg")`
+
+    # install.packages("devtools")
+    devtools::install_github("DSCI-310/dsci-310-group-6-pkg")
 
 Now the package should be installed and you will be able to import the
 package into the R Markdown file for generating the analysis report.
 
 ## Usage
 
+#### clean_data()
+
 This package include functions that can be used throughout data
 wraggling and predictive model building process. The first function is
 to read data into the notebook and unselect specificed columns.
-`from dsci_310_group_6_pkg.cleandata import clean_data   clean_data(file_path, output_path = NULL, c("x", "y"))   clean_data(file_path, output_path = NULL, cols = NULL)`
+
+``` r
+library(datatheexplorer)
+sample_data
+#>   x y  z
+#> 1 1 5  9
+#> 2 2 6 10
+#> 3 3 7 11
+#> 4 4 8 12
+# This function will remove columns X and Y from the final dataframe
+# clean_data(input_path, output_path = NULL, c("x", "y"))
+
+# Specifying NULL in cols will keep all the columns from existing dataframe
+# clean_data(input_path, output_path = NULL, cols = NULL)
+```
+
+#### get_max(), get_med(), get_min()
 
 Another usage for this package is to get some summary information (Min,
 Max, or Median) of a column:
-`from dsci_310_group_6_pkg.getmax import get_max   from dsci_310_group_6_pkg.getmed import get_med   from dsci_310_group_6_pkg.getmin import get_min   get_max(my_data, "col_y")   get_min(my_data, "col_x")   get_med(my_data, "col_y")`
+
+``` r
+library(datatheexplorer)
+sample_data
+#>   x y  z
+#> 1 1 5  9
+#> 2 2 6 10
+#> 3 3 7 11
+#> 4 4 8 12
+# this will obtain the max of the column
+get_max(sample_data, "y")
+#> [1] 8
+
+# this will obtain the min of the column
+get_min(sample_data, "x")
+#> [1] 1
+
+# this will obtain the median of the column
+get_med(sample_data, "y")
+#> [1] 6.5
+```
 
 Before trainning the predictive models, we often need to split data in
 train and test sets. The function in the package shown below can be used
 to perform this task (note that the fourth argument represent the
 proportion for split):
-`from dsci_310_group_6_pkg.splitdata import splitdata   splitdata(input_path, NULL, NULL, 0.67, "test")   splitdata(input_path, NULL, NULL, 0.34, "train")`
+
+``` r
+library(datatheexplorer)
+sample_data
+#>   x y  z
+#> 1 1 5  9
+#> 2 2 6 10
+#> 3 3 7 11
+#> 4 4 8 12
+# splits the data into test and train datasets
+splitdata(input_path, NULL, NULL, 0.67, "test")
+#> Joining, by = c("x", "y", "z")
+#>   x y  z
+#> 1 1 5  9
+#> 2 4 8 12
+splitdata(input_path, NULL, NULL, 0.34, "train")
+#> Joining, by = c("x", "y", "z")
+#>   x y  z
+#> 1 2 6 10
+```
 
 ## Contributing:
 
